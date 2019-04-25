@@ -30,9 +30,13 @@ void loop(void)
   sensors.requestTemperatures(); // Send the command to get temperatures
   Serial.println("DONE");
 
-  Serial.print("Temperature is: ");
-  Serial.print(sensors.getTempCByIndex(0)); // Why "byIndex"? 
+  Serial.print("Temperature 1 is: ");
+  Serial.println(sensors.getTempCByIndex(0)); // Why "byIndex"? 
     // You can have more than one IC on the same bus. 
     // 0 refers to the first IC on the wire
+   
+    Serial.print("Temperature 2 is: ");
+  Serial.println(sensors.getTempCByIndex(1)); // Why "byIndex"? 
+  
     delay(1000);
 }
