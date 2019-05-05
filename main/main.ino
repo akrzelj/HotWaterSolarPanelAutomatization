@@ -14,6 +14,20 @@ DallasTemperature sensors(&oneWire);
 uint8_t sensor1[8] = { 0x28, 0xFF, 0x9A, 0xF3, 0x94, 0x16, 0x04, 0x2A }; //kesa
 uint8_t sensor2[8] = { 0x28, 0xFF, 0x6D, 0x14, 0xA0, 0x16, 0x05, 0x0C };
 
+/*
+ * Function for rurning on and off relay
+ * relayPin - pin where relay is connected
+ * powerFlag - indication for turning on or off relay
+ *             1 - turn on
+ *             2 - turn off
+ */
+void relayPower(int relayPin, int powerFlag) {
+  if (powerFlag == 1)
+    digitalWrite(relayPin, 1);
+  if (powerFlag == 2)
+    digitalWrite(relayPin, 0);
+}
+
 void setup(void)
 {
   Serial.begin(9600);
